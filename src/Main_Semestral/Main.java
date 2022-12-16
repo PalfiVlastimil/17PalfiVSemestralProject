@@ -1,5 +1,7 @@
 package Main_Semestral;
 
+import Christmas.ChristmasPalfiVlastimil;
+
 import java.util.Scanner;
 
 public class Main {
@@ -35,7 +37,7 @@ public class Main {
                     System.out.println();
                     System.out.println("//=====================\\\\");
                     System.out.println("||     Processing:     ||  ");
-                    System.out.println("||  Christmas1 Project… ||  ");
+                    System.out.println("|| Christmas1 Project… ||  ");
                     System.out.println("\\\\=====================//");
                     System.out.println();
 
@@ -82,13 +84,12 @@ public class Main {
     }
 
     private static void RunSemestralProject() {
-
         System.out.println("Working");
 
     }
 
     private static void RunChristmasProject() {
-        System.out.println("Working Christmas");
+        ChristmasPalfiVlastimil.RunSnowmanProgram();
         //ChristmasPalfiVlastimil.PrintSnowMan(nSnowballs,nButtons,hatColor,scarfColor);
 
     }
