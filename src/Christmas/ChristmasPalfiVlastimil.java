@@ -33,9 +33,9 @@ public final class ChristmasPalfiVlastimil {
     }
     private static final ColorType[] ColorValues  = ColorType.values();
     public static void main(String[] args) {
-        RunSnowmanProgram();
+        runSnowmanProgram();
     }
-    public static void RunSnowmanProgram(){
+    public static void runSnowmanProgram(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Zadejte počet sněhových koulí.");
         int nSnowballs = sc.nextInt();
@@ -52,10 +52,10 @@ public final class ChristmasPalfiVlastimil {
         int hatColor = sc.nextInt()-1; //-1, protože nebereme barvy od 1, ale od 0
         System.out.println("Zadejte číselně barvu pro šálu: \n1:Black\n2:Red\n3:Green\n4:Yellow\n5:Blue\n6:Purple\n7.Cyan");
         int scarfColor = sc.nextInt()-1;
-        String result = PrintSnowMan(nSnowballs,nButtons, hatColor, scarfColor);
+        String result = printSnowMan(nSnowballs,nButtons, hatColor, scarfColor);
         System.out.println(result);
     }
-    public static String ChangeColor(int colorIndex){
+    public static String changeColor(int colorIndex){
         if(colorIndex < 0 || colorIndex > ColorValues.length - 1){
             return ANSI_WHITE;
         }
@@ -78,7 +78,7 @@ public final class ChristmasPalfiVlastimil {
                 return ANSI_WHITE;
         }
     }
-    public static String PrintSnowMan(int nSnowballs, int nButtons, int hatColor, int scarfColor) {
+    public static String printSnowMan(int nSnowballs, int nButtons, int hatColor, int scarfColor) {
         //graphicbuilder
         StringBuilder sb = new StringBuilder();
         String rowString = "";
@@ -96,7 +96,7 @@ public final class ChristmasPalfiVlastimil {
                 sb.append(" ");
             }
             for (int k = 0; k < i; k++) {
-                sb.append(ChangeColor(hatColor)  + " █" + ANSI_RESET);
+                sb.append(changeColor(hatColor)  + " █" + ANSI_RESET);
             }
             sb.append("\n");
         }
@@ -106,7 +106,7 @@ public final class ChristmasPalfiVlastimil {
                 sb.append(" ");
             }
             for (int k = 0; k < maxHatSize+6; k++) {
-                sb.append(ChangeColor(hatColor)  + " █" + ANSI_RESET);
+                sb.append(changeColor(hatColor)  + " █" + ANSI_RESET);
             }
             sb.append("\n");
         }
@@ -125,7 +125,7 @@ public final class ChristmasPalfiVlastimil {
                     }
                     //šála color
                     else if((z == 1 && i < 4 && k < snowBallSize)){
-                        sb.append(ChangeColor(scarfColor)  + " █" + ANSI_RESET);
+                        sb.append(changeColor(scarfColor)  + " █" + ANSI_RESET);
                     }
                     //I met the devil and he gave me this…
                     else if((z > 0 && z < nSnowballs) && (( i == 4 && k >= buttonPlace && k <= snowBallSize-buttonPlace-1)
