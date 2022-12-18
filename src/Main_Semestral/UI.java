@@ -20,12 +20,13 @@ public class UI {
         boolean end = false;
         while (!end) {
             try {
-                System.out.println("============================");
-                System.out.println("      Semestrální práce      ");
-                System.out.println("============================");
-                System.out.println("1: Spustit práci");
-                System.out.println("2: Spustit předchozí vánoční projekt");
-                System.out.println("3: Exit");
+                System.out.println("==========================================");
+                System.out.println("||          Semestrální práce           ||");
+                System.out.println("==========================================");
+                System.out.println("|| 1: Spustit práci                     ||");
+                System.out.println("|| 2: Spustit předchozí vánoční projekt ||");
+                System.out.println("|| 3: Exit                              ||");
+                System.out.println("==========================================");
 
                 int choose = _sc.nextInt();
                 switch (choose) {
@@ -108,30 +109,45 @@ public class UI {
     }
 
     private static void runSemesterProject() {
+        final int  MAX_SIZE = 10000;
+        final int  MIN_SIZE = 0;
         try {
             //INPUT
-            System.out.println("17. Program vytvoří šachovnici ve tvaru matice při zadání počtu řádků, sloupců, a velikosti bloku.");
+            System.out.println("========================================================================================================");
+            System.out.println("|| 17. Program vytvoří šachovnici ve tvaru matice při zadání počtu řádků, sloupců, a velikosti bloku. ||");
+            System.out.println("|| Zadané údaje musí být kladná nenulová čísla. Jsou omezeny do 10 000 kvůli jinak přetečení paměti.  ||");
+            System.out.println("========================================================================================================");
+            System.out.println();
             System.out.println("Zadejte počet řádků.");
             int row = _sc.nextInt();
-            if (row <= 0) {
-
+            if (row <= MIN_SIZE){
                 System.out.println("Error: Nastala chyba, zadal jste záporné číslo nebo nulu.");
+                return;
+            }
+            if (row > MAX_SIZE) {
+                System.out.println("Error: Nastala chyba, zadal jste větší číslo než 10 000.");
                 return;
             }
             System.out.println("Zadejte počet sloupců.");
             int column = _sc.nextInt();
-            if (column <= 0) {
-
+            if (column <= MIN_SIZE) {
                 System.out.println("Error: Nastala chyba, zadal jste záporné číslo nebo nulu.");
+                return;
+            }
+            if (column > MAX_SIZE) {
+                System.out.println("Error: Nastala chyba, zadal jste větší číslo než 10 000.");
                 return;
             }
             System.out.println("Zadejte velikost bloku");
             int blocks = _sc.nextInt();
-            if (blocks <= 0) {
+            if (blocks <= MIN_SIZE) {
                 System.out.println("Error: Nastala chyba, zadal jste záporné číslo nebo nulu.");
                 return;
             }
-
+            if (blocks > MAX_SIZE) {
+                System.out.println("Error: Nastala chyba, zadal jste větší číslo než 10 000.");
+                return;
+            }
             //OUTPUT
             System.out.println("Výsledná matice");
             int[][] chessboard = Chessboard.createChessboard(row, column, blocks);
