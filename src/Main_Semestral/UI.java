@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /** 17. Program vytvoří šachovnici ve tvaru matice při zadání počtu řádků, sloupců, a velikosti bloku.
  * @author Vlastimil Pálfi
- * @version 0.9 12/17/22
+ * @version 1.0 12/17/22
  */
 public class UI {
     public static Scanner _sc = new Scanner(System.in);
